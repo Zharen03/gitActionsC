@@ -1,0 +1,6 @@
+name: "Hola mundooo"
+
+on:
+  push:
+    branches: ["main"]
+    
