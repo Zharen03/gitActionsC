@@ -13,6 +13,8 @@ jobs:
       - run: echo "Generar binario"
       - run: echo "Publicar version"
   otro-job:
+    needs: deploy-cf
     runs-on: ubuntu-latest
     steps:
       - run: echo "ola"
+      - run: echo "Este es un secreto: ${{ secrets.TOKEN_SECRET }}"

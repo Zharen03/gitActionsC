@@ -1,0 +1,47 @@
+name: "Deploy to server"
+
+on: 
+  push:
+
+jobs:
+  first_jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "hola mundo"
+
+  Secound_jobs:
+    runs-on: ubuntu-latest
+    needs: first_jobs
+
+    steps:
+      
+run: echo "Hola mundo2"
+Third_jobs:
+  runs-on: ubuntu-latest
+
+    steps:
+    
+name: Run only if the branch is main
+    if: github.ref == 'refs/heads/main'
+    run: echo "This step runs only on the main branch"
+
+  Four_job:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      
+name: Run PR CI
+    - run: echo "Running PR only CI"
+
+  example_matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+    steps:
+      
+uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.version }}
+
