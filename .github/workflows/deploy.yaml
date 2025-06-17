@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "ola"
-      - run: echo "Esto es secreto"+"${{ secrets.TOKEN_SECRET }}"
+      - run: echo "Esto es secreto ""${{ secrets.TOKEN_SECRET }}"
