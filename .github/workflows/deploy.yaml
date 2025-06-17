@@ -18,3 +18,4 @@ jobs:
     steps:
       - run: echo "ola"
       - run: echo "Esto es secreto ""${{ secrets.TOKEN_SECRET }}"
+      - run: echo "ESto no es secreto" ${{ vars.VAR1 }}
